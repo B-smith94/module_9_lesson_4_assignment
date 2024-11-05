@@ -1,14 +1,11 @@
-<!--Assignment 1
-Task 1: Apply Bootstrap typography classes to headings and paragraphs
-Task 2: Style links and buttons with color classes
-Task 3: Experiment with bootstrap's text alignment and emphasis classes
-Task 4: Customize the background and text color of various sections using Bootstrap's color utilities
-Task 5: Create a responsive table with alternate row colors using Bootstrap's table classes
---> 
-<!--Assignment 2
-Task 1: Use Bootstrap classes to create responsive images
-Task 2: Use Bootstrap grid system to create an image gallery
-Task 3: Implement a responsive footer with relavent information and links-->
+<!--Assignment:
+Task 1: Implement a responsive navbar component
+    -responsive, collapses into a toggleable menu on smaller screans
+Task 2: Replace Services Section standard elements wtih Bootstrap Cards
+    -consistent styling
+Task 3: Incorporate Bootstrap Buttons with interactive hover effects
+    -provide visual feedback when interacting with clickable elements-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,14 +16,39 @@ Task 3: Implement a responsive footer with relavent information and links-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
     <body>
-        <!--Assignment 2, Task 1-->
         <header class="img-thumbnail" style="background-image: url('pictures/tech_background.jpg'); background-color: #cccccc;">
             <!--Assignment 1, Task 1 and 3-->
             <h1 class="text-center text-light">Tech Solutions</h1>
             <p class="text-center text-light">Welcome to Tech Solutions, your go-to company for all your technological needs!</p>
         </header>
-        <!--Assignment 1, Task 4-->
-        <section class="container my-5 bg-info text-light border rounded">
+        <!--Task 1-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tech Solutions</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse show" id="navbarBasic">
+                    <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#signup">Make a Purchase</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                      </li>
+                    </ul>
+            </div>
+        </nav>
+        <section class="container my-5 bg-info text-light border rounded" id="about">
             <div class="row g-4">
                 <div class="col-12 col-md-8">
                     <h3>About Us</h3>
@@ -46,35 +68,53 @@ Task 3: Implement a responsive footer with relavent information and links-->
                 </div>
             </div>
         </section>
-        <!--Assignment 1, Task 4--><!--Assignment 2, Task 1 and 2-->
-        <section class="container-fluid my-5 bg-primary text-light border"> 
+        <!--Task 2-->
+        <section class="container-fluid my-5 bg-primary text-light border p-5" id="services"> 
             <h2 class="mb-4">Services</h2>
             <div class="row g-4">
                 <article class="col-12 col-md-4">
-                    <div class="p-3">
-                        <h3 class="mt-3">Cybersecurity</h3>
-                        <img src="pictures/cybersecurity.jpg" class="img-fluid" style="border-radius: 5px;" alt="A picture of a lock encrypted with cybersecurity measures">
-                        <p class="blockquote">Here at Tech Solutions, we understand that your data is of the upmost importance. We pride ourselves on developing the best cybersecurity suites in the business.</p>  
+                    <div class="card">
+                        <div class="card-header collapsed">
+                            <h3 class="mt-3">Cybersecurity</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-tite h4">Protect Your Data with our Cybersecurity Suite</div>
+                            <img src="pictures/cybersecurity.jpg" class="img-fluid card-img-top" style="border-radius: 5px;" alt="A picture of a lock encrypted with cybersecurity measures">
+                            <p class="cart-text">Here at Tech Solutions, we understand that your data is of the upmost importance. We pride ourselves on developing the best cybersecurity suites in the business.</p>  
+                        </div>
+                        <div class="card-footer text-muted">2 days ago</div>
                     </div>
                 </article>
                 <article class="col-12 col-md-4">
-                    <div class="p-3">
-                        <h3 class="mt-3">Analytics</h3>
-                        <img src="pictures/modern-analytic.jpg" class="img-fluid" style="border-radius: 5px;" alt="A picture of data presented in a graph">
-                        <p class="blockquote">Our Data Analytics software is some of the most accurate and efficient you can find in the open market. You can be sure that you will always have the information you need to make critical decisions regarding your business.</p>
+                    <div class="card">
+                        <div class="card-header collapsed">
+                            <h3 class="mt-3">Analytics</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title h4">Make Informed Decisions Based On Our Analytics Service</div>
+                            <img src="pictures/modern-analytic.jpg" class="img-fluid card-img-top" style="border-radius: 5px;" alt="A picture of data presented in a graph">
+                            <p class="card-text">Our Data Analytics software is some of the most accurate and efficient you can find in the open market. You can be sure that you will always have the information you need to make critical decisions regarding your business.</p>
+                        </div>
+                        <div class="card-footer text-muted">2 days ago</div>
                     </div>
                 </article>
                 <article class="col-12 col-md-4">
-                    <div class="p-3">
-                        <h3 class="mt-3">Cloud Services</h3>
-                        <img src="pictures/cloud.jpeg" class="img-fluid" style="border-radius: 5px;" alt="A picture demonstrating cloud computing">
-                        <p class="blockquote">If you find that you are always running out of space on your computer system, our Cloud Computing services are known to be among the most secure and efficient. We at Tech Solutions believe in colabboration, so we also make it easy for you to add collaborators to your cloud projects.</p>
+                    <div class="card">
+                        <div class="card-header collapsed">
+                            <h3 class="mt-3">Cloud Services</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title h4">Manage Your Projects and Storage With Our Cloud Services</div>
+                            <img src="pictures/cloud.jpeg" class="img-fluid card-img-top" style="border-radius: 5px;" alt="A picture demonstrating cloud computing">
+                            <p class="card-text">If you find that you are always running out of space on your computer system, our Cloud Computing services are known to be among the most secure and efficient. We at Tech Solutions believe in colabboration, so we also make it easy for you to add collaborators to your cloud projects.</p>
+                        </div>
+                        <div class="card-footer text-muted">2 days ago</div>
+                        </div>
                     </div>
                 </article>
             </div>      
         </section>
-        <!--Assignent 1, Task 5-->
-        <section>
+        <section id="signup">
             <table class="table table-striped table-hover">
                 <tr>
                     <th>Service</th>
@@ -97,59 +137,55 @@ Task 3: Implement a responsive footer with relavent information and links-->
                     <td>$6.99 per TB</td>
                 </tr>
             </table>
+            <div class="bg-light p-3 border rounded-top">
+                <form>
+                    <div class="row mb-3">
+                        <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name">
+                        </div>
+                    </div>        
+                    <div class="row mb-3">
+                        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email Address">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Services: </label>
+                        <div role="alert" aria-live="assertive">Check all the services that are of interest (select multiple).</div>
+                        <div class="col-sm-10 offset-sm-2">
+                            <div class="form-check"> 
+                                <label for="cybersecurity" class="form-check-label">Cybersecurity</label>
+                                <input class="form-check-input" type="checkbox" id="cybersecurity" name="cybersecurity" value="yes">
+                            </div>
+                            <div class="form-check">
+                                <label for="analytics" class="form-check-label">Analytics</label>
+                                <input class="form-check-input" type="checkbox" id="analytics" name="analytics" value="yes">
+                            </div>
+                            <div class="form-check">
+                                <label for="cloud" class="form-check-label">Cloud Services</label>
+                                <input class="form-check-input" type="checkbox" id="cloud" name="cloud" value="yes">
+                            </div>
+                        </div>
+                    </div>
+                    <label for="comments">Additional Comments:</label>
+                    <div class="form-floating">
+                        
+                        <textarea class="form-control" name="comments" id="commments" style="height: 100px" placeholder="Share any additional comments or questions here."></textarea>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="submit and reset buttons">
+                        <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        <button type="submit" class="btn btn-outline-primary">Submit</button> 
+                    </div>
+                </form>
+            </div>
         </section>
-        <!--Assignment 1, Task 4-->
-        <section class="bg-light p-3 border rounded-top">
-            <form>
-                <div class="row mb-3">
-                    <label for="name" class="col-sm-2 col-form-label">Name:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name">
-                    </div>
-                </div>        
-                <div class="row mb-3">
-                    <label for="email" class="col-sm-2 col-form-label">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email Address">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Services: </label>
-                    <div role="alert" aria-live="assertive">Check all the services that are of interest (select multiple).</div>
-                    <div class="col-sm-10 offset-sm-2">
-                        <div class="form-check"> 
-                            <label for="cybersecurity" class="form-check-label">Cybersecurity</label>
-                            <input class="form-check-input" type="checkbox" id="cybersecurity" name="cybersecurity" value="yes">
-                        </div>
-                        <div class="form-check">
-                            <label for="analytics" class="form-check-label">Analytics</label>
-                            <input class="form-check-input" type="checkbox" id="analytics" name="analytics" value="yes">
-                        </div>
-                        <div class="form-check">
-                            <label for="cloud" class="form-check-label">Cloud Services</label>
-                            <input class="form-check-input" type="checkbox" id="cloud" name="cloud" value="yes">
-                        </div>
-                    </div>
-                </div>
-                <label for="comments">Additional Comments:</label>
-                <div class="form-floating">
-                    
-                    <textarea class="form-control" name="comments" id="commments" style="height: 100px" placeholder="Share any additional comments or questions here."></textarea>
-                </div>
-                <!--Assignment 1, Task 2-->
-                <div class="btn-group" role="group" aria-label="submit and reset buttons">
-                    <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                    <button type="submit" class="btn btn-outline-primary">Submit</button> 
-                </div>
-            </form>
-        </section>
-        <!--Assignent 2, Task 3-->
-        <footer class="container-flex pt-3 pb-1 mb-1 bg-info">
+        <footer class="container-flex pt-3 pb-1 mb-1 bg-info" id="contact">
             <div class="row mb-3">
                 <div class="col-12 col-md-4">
                     <h5>Contact information</h5>
                     <ul>
-                        <!--Assignment 1, Task 2-->
                         <li>Phone: <a href="tel:123-456-7890" class="text-light">(123) 456-7890</a></li>
                         <li>Email: <a href="mailto:techsolutions@example.com" class="text-light">techsolutions@example.com</a></li>
                     </ul>
@@ -157,7 +193,6 @@ Task 3: Implement a responsive footer with relavent information and links-->
                 <div class="col-12 col-md-4">
                     <h5>Social Media Links</h5>
                     <ul>
-                        <!--Assignment 1, Task 2-->
                         <li><a href="http://www.facebook.com" class="text-light">Facebook</a></li>
                         <li><a href="http://www.bsky.com" class="text-light">Bluesky</a></li>
                     </ul>
@@ -170,7 +205,6 @@ Task 3: Implement a responsive footer with relavent information and links-->
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-                <!--Assignment 1, Task 1-->
                 <p class="text-light text-center">&copy;Tech Solutions, inc. All rights reserved.</p>
             </div>
         </footer>
